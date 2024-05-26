@@ -1,0 +1,82 @@
+---
+import CustomLink from "./CustomLink.astro";
+---
+
+<nav class="fixed top-0 w-full h-auto flex justify-around items-center z-50">
+  <picture>
+    <img
+      src="/images/pichy-boys-banner.webp"
+      alt="pichy boys banner"
+      class="h-[64px]"
+    />
+  </picture>
+
+  <section>
+    <ul class="flex gap-6 text-yellow-500 text-lg font-light transition-colors">
+      <li
+        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
+      >
+        <a href="#">Home</a>
+        <div
+          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
+        >
+        </div>
+      </li>
+
+      <li
+        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
+      >
+        <a href="#">Los Pichys</a>
+        <div
+          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
+        >
+        </div>
+      </li>
+
+      <li
+        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
+      >
+        <a href="#">Serrano</a>
+        <div
+          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
+        >
+        </div>
+      </li>
+
+      <li
+        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
+      >
+        <a href="#">La Pichy Tienda</a>
+        <div
+          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
+        >
+        </div>
+      </li>
+
+      <li
+        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
+      >
+        <a href="#">Tickets</a>
+        <div
+          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
+        >
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <CustomLink
+    href="mailto:sales@lospichyboys.com?subject=Me ineteresa informacion sobre anuncions."
+    text="anúnciate"
+  />
+</nav>
+
+<style>
+  nav {
+    box-shadow:
+      0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+      0px 0px 0 1px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+</style>

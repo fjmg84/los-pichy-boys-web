@@ -1,0 +1,16 @@
+---
+const { href, text } = Astro.props;
+---
+
+<section class="group relative flex overflow-hidden">
+  <a
+    href={href}
+    class={`group-hover:text-white z-10 text-yellow-500 uppercase border-2 border-yellow-500 text-sm cursor-pointer transition-all flex items-center justify-center gap-2 px-20 py-3`}
+    >{text}
+    <slot />
+  </a>
+  <div
+    class="group-hover:bottom-0 transition-all ease-linear bg-violet-700 px-96 py-10 absolute -left-24 -bottom-24"
+  >
+  </div>
+</section>

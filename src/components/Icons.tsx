@@ -17,9 +17,9 @@ export function Clock(props: SVGProps<SVGSVGElement>) {
       <g
         fill="none"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       >
         <circle cx="12" cy="12" r="10" />
         <path d="M12 6v6l-4 2" />

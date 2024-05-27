@@ -2,9 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 import { Ticket, Clock } from "@components/Icons";
 import CustomLink from "@components/CustomLink.astro";
+import IFramePodCats from "@components/IFramePodCats.astro";
+import Carousel from "@components/Carousel";
+import IFrameStore from "@components/IFrameStore.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Astro." active="/">
   <header class="h-screen overflow-hidden">
     <section
       id="description"
@@ -24,59 +27,80 @@ import CustomLink from "@components/CustomLink.astro";
     </video>
   </header>
 
-  <main
-    class="h-screen bg-gradient-to-r from-violet-500 grid place-content-center gap-10 relative overflow-hidden"
-  >
-    <Ticket
-      width={"60em"}
-      className="text-yellow-500 rotate-12 opacity-5 absolute top-0 left-1/2"
-    />
-    <section class="flex items-center justify-center gap-5">
-      <h1 class="font-extrabold text-yellow-500 uppercase text-7xl">
-        Tickets!
-      </h1>
-    </section>
+  <main>
+    <section
+      id="section-ticket"
+      class="h-screen bg-gradient-to-r from-violet-500 grid place-content-center gap-10 relative overflow-hidden"
+    >
+      <Ticket
+        width={"60em"}
+        className="text-yellow-500 rotate-12 opacity-5 absolute top-0 left-1/2"
+      />
+      <article class="flex items-center justify-center">
+        <h1
+          id="ticket"
+          class="font-extrabold text-yellow-500 uppercase text-8xl"
+        >
+          Tickets!
+        </h1>
+      </article>
+      <article class="flex gap-10 items-start flex-wrap justify-center">
+        <picture class="relative w-1/2">
+          <img
+            src="/images/el-puesto-a-deo.webp"
+            alt="el puesto a deo"
+            class="absolute blur-md"
+          />
+          <img
+            src="/images/el-puesto-a-deo.webp"
+            alt="el puesto a deo"
+            class="z-10 relative rounded-md overflow-hidden"
+          />
+        </picture>
 
-    <section class="flex gap-10 items-start">
-      <picture class="relative w-1/2 ml-10">
-        <img
-          src="/images/el-puesto-a-deo.webp"
-          alt="el puesto a deo"
-          class="absolute blur-md"
-        />
-        <img
-          src="/images/el-puesto-a-deo.webp"
-          alt="el puesto a deo"
-          class="z-10 relative rounded-md overflow-hidden"
-        />
-      </picture>
-
-      <article class="flex flex-col gap-5 h-full justify-between">
-        <p class="text-white text-3xl uppercase">Ultimas fechas</p>
-        <div class="flex flex-col gap-1">
-          <strong class="text-white text-xl uppercase">Teatro Trail</strong>
-          <p class="text-white text-xl uppercase flex gap-2">
-            <Clock width="1em" /> viernes <strong> 8:00pm</strong>
+        <article class="flex flex-col gap-5 h-full justify-between">
+          <p id="ticket" class="text-white text-5xl uppercase">
+            Ultimas fechas
           </p>
-          <p class="text-white text-xl uppercase flex gap-2">
-            <Clock width="1em" />sabados<strong>8:30pm</strong>
-          </p>
-        </div>
+          <div class="flex flex-col gap-1">
+            <strong class="text-white text-3xl uppercase">Teatro Trail</strong>
+            <p class="text-white text-xl uppercase flex gap-2 ml-5">
+              <Clock width="1em" /> viernes <strong> 8:00pm</strong>
+            </p>
+            <p class="text-white text-xl uppercase flex gap-2 ml-5">
+              <Clock width="1em" />sabados<strong>8:30pm</strong>
+            </p>
+          </div>
 
-        <CustomLink href="#" text="compralos aqui!">
-          <img src="/images/tickets.webp" alt="tickets" class="w-16" />
-        </CustomLink>
+          <CustomLink href="#" text="compralos aqui!">
+            <img src="/images/tickets.webp" alt="tickets" class="w-16" />
+          </CustomLink>
+        </article>
       </article>
     </section>
-  </main>
 
-  <style>
-    #description {
-      box-shadow:
-        0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-        0px 0px 0 1px rgba(0, 0, 0, 0.3);
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-    }
-  </style>
+    <section
+      class="bg-gradient-to-b from-sky-500 to-sky-700 flex items-center flex-col relative py-20 px-64"
+    >
+      <IFramePodCats />
+
+      <div class="h-[1px] w-full rounded-2xl bg-sky-500 my-10"></div>
+
+      <Carousel client:only />
+
+      <div class="h-[1px] w-full rounded-2xl bg-sky-500 my-10"></div>
+
+      <IFrameStore />
+    </section>
+  </main>
 </Layout>
+
+<style>
+  #description {
+    box-shadow:
+      0px 5px 50px -5px rgba(0, 0, 0, 0.1),
+      0px 0px 0 1px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+</style>

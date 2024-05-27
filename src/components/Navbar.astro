@@ -1,5 +1,11 @@
 ---
 import CustomLink from "./CustomLink.astro";
+
+export interface NavbarProps {
+  active: "/" | "/about_us";
+}
+
+const { active } = Astro.props;
 ---
 
 <nav class="fixed top-0 w-full h-auto flex justify-around items-center z-50">
@@ -16,9 +22,16 @@ import CustomLink from "./CustomLink.astro";
       <li
         class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
       >
-        <a href="/">Home</a>
+        <a href="/" class:list={[{ "text-violet-500": active === "/" }]}>Home</a
+        >
         <div
-          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
+          class:list={[
+            "w-full h-[1px] absolute bg-violet-500 transition-all",
+            {
+              "-bottom-7 group-hover:bottom-3": active !== "/",
+              "bottom-3": active === "/",
+            },
+          ]}
         >
         </div>
       </li>
@@ -26,7 +39,27 @@ import CustomLink from "./CustomLink.astro";
       <li
         class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
       >
-        <a href="/about-us">Los Pichys</a>
+        <a
+          href="/about-us"
+          class:list={[{ "text-violet-500": active === "/about_us" }]}
+          >Los Pichys</a
+        >
+        <div
+          class:list={[
+            "w-full h-[1px] absolute bg-violet-500 transition-all",
+            {
+              "-bottom-7 group-hover:bottom-3": active !== "/about_us",
+              "bottom-3": active === "/about_us",
+            },
+          ]}
+        >
+        </div>
+      </li>
+
+      <li
+        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
+      >
+        <a href="/#section-ticket">Tickets</a>
         <div
           class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
         >
@@ -46,17 +79,7 @@ import CustomLink from "./CustomLink.astro";
       <li
         class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
       >
-        <a href="#">La Pichy Tienda</a>
-        <div
-          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
-        >
-        </div>
-      </li>
-
-      <li
-        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
-      >
-        <a href="#">Tickets</a>
+        <a href="/#section-store">La Pichy Tienda</a>
         <div
           class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
         >

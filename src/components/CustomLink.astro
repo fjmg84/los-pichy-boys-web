@@ -5,7 +5,7 @@ const { href, text } = Astro.props;
 <div class="group relative flex overflow-hidden w-fit">
   <a
     href={href}
-    class={`group-hover:text-white z-10 text-yellow-500 uppercase border-2 border-yellow-500 text-sm cursor-pointer transition-all flex items-center justify-center gap-2 px-20 py-3 `}
+    class={`group-hover:text-white z-10 text-yellow-500 uppercase border-2 border-yellow-500 text-sm cursor-pointer transition-all flex items-center justify-center gap-2 md:px-20 px-5 py-3 `}
     >{text}
     <slot />
   </a>

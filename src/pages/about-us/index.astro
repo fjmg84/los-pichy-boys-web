@@ -3,32 +3,17 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Sobre nosotros" active="/about_us">
-  <main class="bg-gradient-to-r from-sky-500">
+  <main class="bg-gradient-to-r from-sky-500 flex flex-col py-20">
     <section
-      class="h-full ml-10 pt-36 w-1/2 text-white gap-5 grid place-content-center"
+      class="h-full flex flex-wrap items-center justify-center gap-10 py-20"
     >
-      <h1 class="font-extrabold text-3xl">Los Pichy Boys & Su Equipo</h1>
-      <blockquote class="italic font-extralight text-lg">
-        Los Pichy Boys son el super-dúo humorístico conformado por los Cubanos
-        Alejandro González y Maikel Rodríguez. Los Pichy Boys, que son primos
-        por parte de madre, comenzaron haciendo pequeños videos por el año 2007
-        para Youtube en su casa que poco a poco alcanzaban más visitas. Hoy día
-        se han convertido en celebridades internacionales con su podcast, Somos
-        Los Pichy Boys junto a su banda de secuaces. Únete a la banda usando el
-        hashtag #TeamPichyBoys
-      </blockquote>
-      <p class="text-sm">Alejandro Y Maikel, son Los Pichy Boys</p>
-    </section>
-
-    <section
-      class="h-full flex flex-wrap items-center justify-center gap-36 py-20"
-    >
-      <article>
-        <h1 id="ticket" class="font-extrabold text-8xl text-yellow-500">
-          #TeamPichyBoys
-        </h1>
-      </article>
-      <article class="flex flex-wrap items-center justify-center gap-5">
+      <h1
+        id="ticket"
+        class="font-extrabold text-4xl lg:text-8xl text-yellow-500"
+      >
+        #TeamPichyBoys
+      </h1>
+      <article class="flex flex-wrap items-center justify-center gap-5 px-5">
         <picture class="relative group overflow-hidden rounded-lg">
           <img
             src="/images/ale.webp"
@@ -36,7 +21,7 @@ import Layout from "@layouts/Layout.astro";
             class="group-hover:scale-125 transition-all"
           />
           <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:-bottom-72"
+            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
           >
             <strong class="opacity-100 text-white text-3xl"
               >Alejandro [Pichy]</strong
@@ -53,7 +38,7 @@ import Layout from "@layouts/Layout.astro";
           />
 
           <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:-bottom-72"
+            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
           >
             <strong class="opacity-100 text-white text-3xl"
               >Maikel [Maikito]</strong
@@ -68,7 +53,7 @@ import Layout from "@layouts/Layout.astro";
             class="group-hover:scale-125 transition-all"
           />
           <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:-bottom-72"
+            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
           >
             <strong class="opacity-100 text-white text-3xl text-nowrap">
               Gustavo [La Maquina]</strong
@@ -83,7 +68,7 @@ import Layout from "@layouts/Layout.astro";
             class="group-hover:scale-125 transition-all"
           />
           <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:-bottom-60"
+            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
           >
             <strong class="opacity-100 text-white text-3xl">
               Alex [Lopez] Lopez</strong
@@ -102,7 +87,7 @@ import Layout from "@layouts/Layout.astro";
             class="group-hover:scale-125 transition-all"
           />
           <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:-bottom-60"
+            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
           >
             <strong class="opacity-100 text-white text-3xl">
               Mikey [Machete]</strong
@@ -114,6 +99,26 @@ import Layout from "@layouts/Layout.astro";
             </div>
           </div>
         </picture>
+      </article>
+    </section>
+
+    <section
+      class="w-full flex items-center justify-center flex-col px-2 md:px-20"
+    >
+      <article
+        class="md:w-1/2 w-full text-white gap-5 flex flex-col justify-center items-center"
+      >
+        <h1 class="font-extrabold text-3xl">Los Pichy Boys & Su Equipo</h1>
+        <blockquote class="italic font-extralight text-lg text-center">
+          Los Pichy Boys son el super-dúo humorístico conformado por los Cubanos
+          Alejandro González y Maikel Rodríguez. Los Pichy Boys, que son primos
+          por parte de madre, comenzaron haciendo pequeños videos por el año
+          2007 para Youtube en su casa que poco a poco alcanzaban más visitas.
+          Hoy día se han convertido en celebridades internacionales con su
+          podcast, Somos Los Pichy Boys junto a su banda de secuaces. Únete a la
+          banda usando el hashtag #TeamPichyBoys
+        </blockquote>
+        <p class="text-sm">Alejandro Y Maikel, son Los Pichy Boys</p>
       </article>
     </section>
   </main>

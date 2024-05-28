@@ -1,5 +1,6 @@
 ---
 import CustomLink from "./CustomLink.astro";
+import { IconAdvertisement } from "./Icons";
 
 export interface NavbarProps {
   active: "/" | "/about_us";
@@ -9,13 +10,13 @@ const { active } = Astro.props;
 ---
 
 <nav class="fixed top-0 w-full h-auto flex justify-around items-center z-50">
-  <picture>
+  <a href="/">
     <img
       src="/images/pichy-boys-banner.webp"
       alt="pichy boys banner"
       class="h-[64px]"
     />
-  </picture>
+  </a>
 
   <section>
     <ul class="flex gap-6 text-yellow-500 text-lg font-light transition-colors">
@@ -91,7 +92,9 @@ const { active } = Astro.props;
   <CustomLink
     href="mailto:sales@lospichyboys.com?subject=Me ineteresa informacion sobre anuncions."
     text="anúnciate"
-  />
+  >
+    <IconAdvertisement width={"2em"} />
+  </CustomLink>
 </nav>
 
 <style>

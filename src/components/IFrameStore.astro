@@ -1,3 +1,8 @@
+---
+import CustomLink from "./CustomLink.astro";
+import { IconStore } from "./Icons";
+---
+
 <div id="section-store" class="flex gap-5 justify-center mt-16">
   <iframe
     class="h-[450px] w-[340px]"
@@ -17,5 +22,9 @@
     <p id="ticket" class="text-lime-200 text-5xl uppercase font-extrabold">
       memorias de la sierra
     </p>
+
+    <CustomLink href="#" text="visita nuestra tienda">
+      <IconStore width="2em" />
+    </CustomLink>
   </div>
 </div>

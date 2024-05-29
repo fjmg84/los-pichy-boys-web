@@ -27,14 +27,14 @@ const { title, active } = Astro.props;
       href="/images/ale.webp"
       as="image"
       type="image/webp"
-      crossorigin="anonymous"
+      fetchpriority="high"
     />
     <link
       rel="preload"
       href="/videos/pichyboy.mp4"
       as="video"
       type="video/mp4"
-      crossorigin="anonymous"
+      fetchpriority="high"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />

@@ -42,7 +42,9 @@ export default function Navbar({
           <img
             src="/images/pichy-boys-banner.webp"
             alt="pichy boys banner"
-            className="h-[64px]"
+            className="h-[64px] w-auto"
+            height={64}
+            width={200}
           />
         </a>
 
@@ -81,7 +83,9 @@ export default function Navbar({
           <img
             src="/images/pichy-boys-banner.webp"
             alt="pichy boys banner"
-            className="h-[64px]"
+            className="h-[64px] w-auto"
+            height={64}
+            width={200}
           />
         </a>
 
@@ -98,7 +102,9 @@ export default function Navbar({
           <img
             src="/images/pichy-boys-banner.webp"
             alt="pichy boys banner"
-            className="h-full"
+            className="h-[64px] w-auto"
+            height={64}
+            width={200}
           />
         </a>
 

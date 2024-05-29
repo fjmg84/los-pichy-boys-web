@@ -2,6 +2,9 @@ import Slider from "react-slick";
 import "@justinribeiro/lite-youtube";
 import LiteYouTube from "./VideoYoutube";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function Carousel() {
   const settings = {
     dots: true,

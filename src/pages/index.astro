@@ -22,7 +22,9 @@ import Hero from "@components/Hero.astro";
       <img
         src="/images/tickets.webp"
         alt="tickets"
-        class="rotate-12 opacity-5 absolute top-0 left-1/2 w-auto h-full"
+        class="w-auto h-full max-h-[500px] rotate-12 opacity-5 absolute top-0 left-1/2"
+        height={500}
+        width={500}
       />
 
       <article class="flex items-center justify-center">
@@ -35,16 +37,20 @@ import Hero from "@components/Hero.astro";
       </article>
 
       <article class="flex gap-10 items-start flex-wrap justify-center">
-        <picture class="relative min-w-[327px] max-w-[700px] lg:w-1/2 w-full">
+        <picture class="relative">
           <img
             src="/images/el-puesto-a-deo.webp"
             alt="el puesto a deo"
             class="absolute blur-md"
+            height={700}
+            width={327}
           />
           <img
             src="/images/el-puesto-a-deo.webp"
             alt="el puesto a deo"
-            class="z-10 relative rounded-md overflow-hidden"
+            class="w-auto z-10 relative rounded-md overflow-hidden"
+            height={700}
+            width={327}
           />
         </picture>
 

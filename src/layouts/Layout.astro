@@ -37,7 +37,10 @@ const { title, active } = Astro.props;
 </html>
 
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+  @font-face {
+    font-family: "Luckiest Guy";
+    src: url("/fonts/LuckiestGuy-Regular.woff2");
+  }
 
   html {
     font-family: system-ui, sans-serif;

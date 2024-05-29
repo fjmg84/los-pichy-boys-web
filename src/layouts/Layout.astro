@@ -1,21 +1,17 @@
 ---
 import Footer from "@components/Footer.astro";
-import Navbar, { type NavbarProps } from "@components/Navbar.astro";
+import Navbar from "@components/Navbar.astro";
 import SocialMedias from "@components/SocialMedias.astro";
 import { ViewTransitions } from "astro:transitions";
-
-interface Props extends NavbarProps {
-  title: string;
-}
 
 const { title, active } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link

@@ -1,18 +1,35 @@
 ---
+import { PAGES } from "src/utils/constants";
 import CustomLink from "./CustomLink.astro";
-import { IconAdvertisement } from "./Icons";
-
-export interface NavbarProps {
-  active: "/" | "/about_us";
-}
+import { IconAdvertisement, IconMenu } from "./Icons";
 
 const { active } = Astro.props;
+
+const links = [
+  {
+    path: "/",
+    name: "home",
+  },
+  {
+    path: "/about-us",
+    name: "Los Pichys",
+  },
+  {
+    path: "/#section-ticket",
+    name: "tickets",
+  },
+  {
+    path: "/serrano",
+    name: "Serrano",
+  },
+  { path: "#", name: "La tienda de los Pichy Boys" },
+];
 ---
 
 <nav
   class="fixed top-0 w-full h-auto hidden lg:flex justify-around items-center z-50"
 >
-  <a href="/">
+  <a href={PAGES.HOME}>
     <img
       src="/images/pichy-boys-banner.webp"
       alt="pichy boys banner"
@@ -22,72 +39,29 @@ const { active } = Astro.props;
 
   <section>
     <ul class="flex gap-6 text-yellow-500 text-lg font-light transition-colors">
-      <li
-        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
-      >
-        <a href="/" class:list={[{ "text-violet-500": active === "/" }]}>Home</a
-        >
-        <div
-          class:list={[
-            "w-full h-[1px] absolute bg-violet-500 transition-all",
-            {
-              "-bottom-7 group-hover:bottom-3": active !== "/",
-              "bottom-3": active === "/",
-            },
-          ]}
-        >
-        </div>
-      </li>
-
-      <li
-        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
-      >
-        <a
-          href="/about-us"
-          class:list={[{ "text-violet-500": active === "/about_us" }]}
-          >Los Pichys</a
-        >
-        <div
-          class:list={[
-            "w-full h-[1px] absolute bg-violet-500 transition-all",
-            {
-              "-bottom-7 group-hover:bottom-3": active !== "/about_us",
-              "bottom-3": active === "/about_us",
-            },
-          ]}
-        >
-        </div>
-      </li>
-
-      <li
-        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
-      >
-        <a href="/#section-ticket">Tickets</a>
-        <div
-          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
-        >
-        </div>
-      </li>
-
-      <li
-        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
-      >
-        <a href="#">Serrano</a>
-        <div
-          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
-        >
-        </div>
-      </li>
-
-      <li
-        class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center"
-      >
-        <a href="/#section-store">La Pichy Tienda</a>
-        <div
-          class="w-full h-[1px] absolute bg-violet-500 -bottom-7 group-hover:bottom-3 transition-all"
-        >
-        </div>
-      </li>
+      {
+        links.map((link) => {
+          return (
+            <li class="group hover:text-violet-500 relative overflow-hidden flex h-[50px] items-center capitalize">
+              <a
+                href={link.path}
+                class:list={[{ "text-violet-500": active === link.path }]}
+              >
+                {link.name}
+              </a>
+              <div
+                class:list={[
+                  "w-full h-[1px] absolute bg-violet-500 transition-all",
+                  {
+                    "-bottom-7 group-hover:bottom-3": active !== link.path,
+                    "bottom-3": active === link.path,
+                  },
+                ]}
+              />
+            </li>
+          );
+        })
+      }
     </ul>
   </section>
 
@@ -99,6 +73,57 @@ const { active } = Astro.props;
   </CustomLink>
 </nav>
 
+<nav class="fixed w-full flex justify-between flex-row lg:hidden z-50 px-5">
+  <a href="/" class="w-auto">
+    <img
+      src="/images/pichy-boys-banner.webp"
+      alt="pichy boys banner"
+      class="h-[64px]"
+    />
+  </a>
+
+  <button id="toggle_menu">
+    <IconMenu width={"3em"} className="text-yellow-500" />
+  </button>
+</nav>
+
+<section
+  id="menu"
+  class="fixed flex flex-col justify-stretch h-screen w-[60%] bg-gradient-to-br to-violet-500 from-violet-900 z-50 pl-10 pt-10 gap-10 transition-transform -translate-x-[200%]"
+>
+  <a href="/">
+    <img
+      src="/images/pichy-boys-banner.webp"
+      alt="pichy boys banner"
+      class="h-full"
+    />
+  </a>
+
+  <ul class="flex flex-col gap-6 text-lg font-light text-yellow-500">
+    {
+      links.map((link) => {
+        return (
+          <li class="group capitalize">
+            <a
+              href={link.path}
+              class:list={[{ "text-violet-500": active === link.path }]}
+            >
+              {link.name}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <CustomLink
+    href="mailto:sales@lospichyboys.com?subject=Me ineteresa informacion sobre anuncions."
+    text="anúnciate"
+  >
+    <IconAdvertisement width={"2em"} />
+  </CustomLink>
+</section>
+
 <style>
   nav {
     box-shadow:
@@ -107,4 +132,17 @@ const { active } = Astro.props;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
   }
+
+  .show_menu {
+    transform: translateX(0);
+  }
 </style>
+
+<script>
+  const toggle_menu = document.querySelector("#toggle_menu");
+  const menu = document.querySelector("#menu");
+
+  toggle_menu?.addEventListener("click", () => {
+    menu?.classList.toggle("show_menu");
+  });
+</script>

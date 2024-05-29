@@ -6,14 +6,12 @@ import IFramePodCats from "@components/IFramePodCats.astro";
 import Carousel from "@components/Carousel";
 import IFrameStore from "@components/IFrameStore.astro";
 import TextHeader from "@components/TextHeader.astro";
+import { PAGES } from "src/utils/constants";
+import Hero from "@components/Hero.astro";
 ---
 
-<Layout title="Los Pichy Boys" active="/">
-  <header class="h-full 2xl:h-screen overflow-hidden">
-    <video autoplay muted loop class="bg-center">
-      <source src="/videos/pichyboy.mp4" />
-    </video>
-  </header>
+<Layout title="Los Pichy Boys" active={PAGES.HOME}>
+  <Hero />
 
   <main class="overflow-hidden">
     <TextHeader />

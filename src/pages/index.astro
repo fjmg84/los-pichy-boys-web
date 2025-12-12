@@ -8,126 +8,114 @@ import IFrameStore from "@components/IFrameStore.astro";
 import TextHeader from "@components/TextHeader.astro";
 import { PAGES } from "src/utils/constants";
 import Hero from "@components/Hero.astro";
+import Card3DEffect from "@components/Card3DEffect.astro";
 ---
 
 <Layout title="Los Pichy Boys" active={PAGES.HOME}>
   <Hero />
 
-  <main class="overflow-hidden">
+  <main class="overflow-hidden to-indigo-950 from-violet-900 bg-gradient-to-b">
     <TextHeader />
-    <section
-      id="section-ticket"
-      class="h-full lg:h-screen py-24 bg-gradient-to-r from-violet-500 grid place-content-center gap-10 relative"
-    >
+
+    <section class="relative flex flex-col items-center top-0">
       <img
-        src="/images/tickets.webp"
+        src="/images/el-puesto-a-deo-back.webp"
         alt="tickets"
-        class="w-auto h-full max-h-[500px] rotate-12 opacity-5 absolute top-0 left-1/2"
+        class="h-full w-full"
         height={500}
         width={500}
       />
-
-      <article class="flex items-center justify-center">
-        <h1
-          id="ticket"
-          class="font-extrabold text-yellow-500 uppercase text-4xl md:text-8xl"
-        >
-          Tickets!
-        </h1>
-      </article>
-
-      <article class="flex gap-10 items-start flex-wrap justify-center">
-        <picture id="picture__box" class="relative z-10">
-          <img
-            src="/images/el-puesto-a-deo.webp"
-            alt="el puesto a deo"
-            class="absolute blur-md w-auto"
-            height={700}
-            width={327}
-          />
-          <img
-            src="/images/el-puesto-a-deo.webp"
-            alt="el puesto a deo"
-            class="w-auto z-10 relative rounded-md overflow-hidden"
-            height={700}
-            width={327}
-          />
-        </picture>
-
-        <article class="flex flex-col gap-5 justify-between px-3 md:px-0">
-          <p id="ticket" class="text-white text-2xl md:text-5xl uppercase">
-            Ultimas fechas
-          </p>
-          <div class="flex flex-col gap-1">
-            <strong class="text-white text-lg md:text-2xl uppercase"
-              >Teatro Trail</strong
-            >
-            <p class="text-white text-xl uppercase flex gap-2 ml-5">
-              <IconClock width="1em" /> viernes <strong> 8:00pm</strong>
-            </p>
-            <p class="text-white text-xl uppercase flex gap-2 ml-5">
-              <IconClock width="1em" />sabados<strong>8:30pm</strong>
-            </p>
-          </div>
-
-          <CustomLink href="#" text="compralos aqui!">
-            <IconTicket width={"2em"} />
-          </CustomLink>
-        </article>
-      </article>
     </section>
 
-    <section
-      class="bg-gradient-to-b from-sky-500 to-sky-700 flex items-center flex-col relative py-20 px-3 xl:px-64"
-    >
-      <IFramePodCats />
+    <section class="flex flex-col gap-32 py-32">
+      <section class="flex flex-col gap-16">
+        <article class="flex items-center justify-center flex-col gap-8">
+          <span class="text-yellow-500 text-xl md:text-4xl uppercase"
+            >No te lo pierdas</span
+          >
+          <h1
+            id="ticket"
+            class="font-extrabold text-yellow-500 uppercase text-2xl md:text-6xl"
+          >
+            ¡COMPRA TUS TICKETS!
+          </h1>
+        </article>
 
-      <div class="h-[1px] w-full rounded-2xl bg-sky-500 my-10"></div>
-      <Carousel client:only="react" />
-      <div class="h-[1px] w-full rounded-2xl bg-sky-500 my-10"></div>
-      <IFrameStore />
+        <article class="flex flex-col items-center justify-center gap-8">
+          <div
+            class="bg-violet-500/20 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-800/20 w-1/2"
+          >
+            <div
+              id="section-ticket"
+              class="flex gap-10 items-start flex-wrap justify-center"
+            >
+              <Card3DEffect client:load />
+
+              <div class="flex flex-col items-start gap-5">
+                <div
+                  class="inline-flex items-center px-4 py-2 text-yellow-500 bg-yellow-500/20 rounded-full text-center"
+                >
+                  <p id="ticket" class="text-md font-semibold uppercase">
+                    Ultimas fechas
+                  </p>
+                </div>
+
+                <div class="flex flex-col gap-5">
+                  <strong class="text-white text-xl md:text-2xl uppercase"
+                    >Teatro Trail</strong
+                  >
+                  <p class="text-white text-xl uppercase flex gap-2">
+                    <IconClock width="1em" />
+                    <span class="text-lg"> viernes </span>
+                    <strong> 8:00pm</strong>
+                    <span
+                      class="px-2 py-0.5 bg-green-500/20 text-green-400 inline-flex items-center text-xs rounded-full font-medium"
+                    >
+                      Disponible
+                    </span>
+                  </p>
+                  <p class="text-white text-xl uppercase flex gap-2">
+                    <IconClock width="1em" />
+                    <span class="text-lg"> sabados </span>
+                    <strong>8:30pm</strong>
+                    <span
+                      class="px-2 py-0.5 bg-green-500/20 text-green-400 inline-flex items-center text-xs rounded-full font-medium"
+                    >
+                      Disponible
+                    </span>
+                  </p>
+                </div>
+
+                <CustomLink href="#" text="compralos aqui!">
+                  <IconTicket width={"2em"} />
+                </CustomLink>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6 text-sm text-white">
+            <span class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              Compra segura
+            </span>
+            <span class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              Confirmación inmediata
+            </span>
+            <span class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              Entrada digital
+            </span>
+          </div>
+        </article>
+      </section>
+
+      <section class="flex items-center flex-col relative px-3 xl:px-64 gap-32">
+        <IFramePodCats />
+
+        <Carousel client:only="react" />
+
+        <IFrameStore />
+      </section>
     </section>
   </main>
 </Layout>
-
-<style>
-  #picture__box {
-    transition:
-      box-shadow 0.1s,
-      transform;
-  }
-</style>
-
-<script>
-  let picture = document.getElementById("picture__box");
-
-  let h = picture?.clientHeight ?? 1;
-  let w = picture?.clientWidth ?? 1;
-
-  picture?.addEventListener("mousemove", (event) => {
-    const { layerX, layerY } = event;
-
-    const yRotation = ((layerX - w / 2) / w) * 20;
-    const xRotation = ((layerY - h / 2) / h) * 20;
-
-    const styles = `
-    perspective(500px)
-    scale(1.1)
-    rotateX(${xRotation}deg)
-    rotateY(${yRotation}deg)
-    `;
-
-    picture.style.transform = styles;
-  });
-
-  picture?.addEventListener("mouseout", () => {
-    const styles = `
-    perspective(500px)
-    scale(1)
-    rotateX(0)
-    rotateY(0)
-    `;
-
-    picture.style.transform = styles;
-  });
-</script>

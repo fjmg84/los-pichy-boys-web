@@ -1,0 +1,68 @@
+---
+const imageSrc = "/images/tickets.webp";
+const imageAlt = "el puesto a deo";
+---
+
+<picture
+  id="picture__box"
+  class="relative block z-10 transition-all duration-75 ease-in-out"
+>
+  <img
+    src={imageSrc}
+    alt={imageAlt}
+    class="z-10 rounded-md overflow-hidden w-auto"
+    height={700}
+    width={327}
+  />
+  <img
+    src={imageSrc}
+    alt={imageAlt}
+    class="absolute blur-md top-0 -z-10 w-auto"
+    height={700}
+    width={327}
+  />
+</picture>
+
+<style>
+  #picture__box {
+    transition:
+      box-shadow 0.1s,
+      transform;
+  }
+</style>
+
+<script>
+  let picture = document.getElementById("picture__box");
+
+  const { clientHeight, clientWidth } = picture as HTMLPictureElement;
+
+  let heigth = clientHeight > 0 ? clientHeight : 234;
+  let width = clientWidth > 0 ? clientWidth : 584;
+
+  picture?.addEventListener("mousemove", (event) => {
+    const { layerX, layerY } = event;
+
+    const yRotation = ((layerX - width / 2) / width) * 20;
+    const xRotation = ((layerY - heigth / 2) / heigth) * 20;
+
+    const styles = `
+    perspective(500px)
+    scale(1.1)
+    rotateX(${xRotation}deg)
+    rotateY(${yRotation}deg)
+    `;
+
+    picture.style.transform = styles;
+  });
+
+  picture?.addEventListener("mouseout", () => {
+    const styles = `
+    perspective(500px)
+    scale(1)
+    rotateX(0)
+    rotateY(0)
+    `;
+
+    picture.style.transform = styles;
+  });
+</script>

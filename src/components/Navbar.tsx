@@ -78,6 +78,7 @@ export default function Navbar({
         {children}
       </nav>
 
+      {/* TODO: Mobile navbar */}
       <nav className="fixed w-full flex justify-between flex-row lg:hidden z-50 px-5">
         <a href="/" className="w-auto">
           <img

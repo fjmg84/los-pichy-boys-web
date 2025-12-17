@@ -4,7 +4,6 @@ import Footer from "@components/Footer.astro";
 import { IconAdvertisement } from "@components/Icons";
 import Navbar from "@components/Navbar";
 import SocialMedias from "@components/SocialMedias.astro";
-import { ViewTransitions } from "astro:transitions";
 
 const { title, active } = Astro.props;
 ---
@@ -15,13 +14,7 @@ const { title, active } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link
-      rel="preload"
-      href="/fonts/LuckiestGuy-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    /> -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,7 +49,6 @@ const { title, active } = Astro.props;
       </CustomLink>
     </Navbar>
     <SocialMedias />
-    <ViewTransitions />
     <slot />
     <Footer />
   </body>

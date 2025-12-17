@@ -5,7 +5,7 @@ import CustomLink from "@components/CustomLink.astro";
 import IFramePodCats from "@components/IFramePodCats.astro";
 import Carousel from "@components/Carousel";
 import IFrameStore from "@components/IFrameStore.astro";
-import TextHeader from "@components/TextHeader.astro";
+
 import { PAGES } from "src/utils/constants";
 import Hero from "@components/Hero.astro";
 import Card3DEffect from "@components/Card3DEffect.astro";
@@ -14,22 +14,31 @@ import Card3DEffect from "@components/Card3DEffect.astro";
 <Layout title="Los Pichy Boys" active={PAGES.HOME}>
   <Hero />
 
-  <main class="overflow-hidden to-indigo-950 from-violet-900 bg-gradient-to-b">
-    <TextHeader />
+  <img
+    id="los-pichy-boys"
+    src="public/images/lodpichyboys-1024x1024.jpg"
+    alt="Los Pichy Boys"
+    class="w-full bg-no-repeat bg-center bg-cover panel"
+    height="500"
+    width="auto"
+  />
 
-    <section class="relative flex flex-col items-center top-0">
-      <img
-        src="/images/el-puesto-a-deo-back.webp"
-        alt="tickets"
-        class="h-full w-full"
-        height={500}
-        width={500}
-      />
-    </section>
+  <img
+    id="el-puesto-a-deo"
+    src="/images/el-puesto-a-deo-back.webp"
+    alt="El Puesto a Deo"
+    class="w-full bg-no-repeat bg-center bg-cover panel"
+    height="500"
+    width="auto"
+  />
 
+  <main
+    id="end-scroll"
+    class="overflow-hidden to-indigo-950 from-violet-900 bg-gradient-to-b z-20 panel"
+  >
     <section class="flex flex-col gap-32 py-32">
-      <section class="flex flex-col gap-16">
-        <article class="flex items-center justify-center flex-col gap-8">
+      <div class="flex flex-col gap-16">
+        <div class="flex items-center justify-center flex-col gap-8">
           <span class="text-yellow-500 text-xl md:text-4xl uppercase"
             >No te lo pierdas</span
           >
@@ -39,7 +48,7 @@ import Card3DEffect from "@components/Card3DEffect.astro";
           >
             ¡COMPRA TUS TICKETS!
           </h1>
-        </article>
+        </div>
 
         <article class="flex flex-col items-center justify-center gap-8">
           <div
@@ -107,15 +116,48 @@ import Card3DEffect from "@components/Card3DEffect.astro";
             </span>
           </div>
         </article>
-      </section>
+      </div>
 
-      <section class="flex items-center flex-col relative px-3 xl:px-64 gap-32">
+      <div class="flex items-center flex-col relative px-3 xl:px-64 gap-32">
         <IFramePodCats />
 
         <Carousel client:only="react" />
 
         <IFrameStore />
-      </section>
+      </div>
     </section>
   </main>
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initAnimations() {
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+    const pinnedImages = gsap.utils.toArray<HTMLElement>(".panel");
+
+    if (pinnedImages.length === 0) return;
+
+    pinnedImages.forEach((img) => {
+      gsap.set(img, { autoAlpha: 1 });
+    });
+
+    pinnedImages.forEach((img, i) => {
+      ScrollTrigger.create({
+        trigger: img,
+        start: "top top",
+        end: "top top",
+        endTrigger: "#end-scroll",
+        pin: true,
+        pinSpacing: false,
+        id: `pinned-image-${i + 1}`,
+      });
+    });
+  }
+
+  initAnimations();
+</script>

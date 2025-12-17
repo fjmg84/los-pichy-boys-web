@@ -1,135 +1,138 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import { PAGES } from "src/utils/constants";
+
+const losPichyBoys = [
+  {
+    name: "Alejandro [Pichy]",
+    handle: ["@LosPichyBoys"],
+    image: "/images/ale.webp",
+  },
+  {
+    name: "Maikel [Maikito]",
+    handle: ["@LosPichyBoys"],
+    image: "/images/maikito.webp",
+  },
+];
+const teamMembers = [
+  {
+    name: "Alex [Lopez] Lopez",
+    handle: ["@AlexDWaves", "Productor Técnico", "¿Comediante?", "@AlexDWaves"],
+    image: "/images/lopez.webp",
+  },
+  {
+    name: "Mikey [Machete]",
+    handle: [
+      "@MikeyMachete",
+      "Productor Creativo",
+      "Digital Marketing Expert",
+      "@MikeyMachete",
+    ],
+    image: "/images/machete.webp",
+  },
+  {
+    name: "Gustavo [La Maquina]",
+    handle: ["Camarógrafo & Editor De Videos", "Gustavo [La Maquina]"],
+    image: "/images/gustavo.webp",
+  },
+];
 ---
 
 <Layout title="Sobre nosotros" active={PAGES.ABOUT_US}>
-  <main class="bg-gradient-to-r from-sky-500 flex flex-col py-20 px-5">
+  <main
+    class="overflow-hidden to-indigo-950 from-violet-900 bg-gradient-to-b flex flex-col items-center py-32"
+  >
     <section
-      class="h-full flex flex-wrap items-center justify-center gap-10 py-20"
+      class="w-full flex items-center justify-center flex-col gap-8 max-w-4xl"
     >
-      <h1
-        id="ticket"
-        class="font-extrabold text-4xl md:text-6xl lg:text-8xl text-yellow-500"
-      >
-        #TeamPichyBoys
-      </h1>
-      <article class="flex flex-wrap items-center justify-center gap-5 px-5">
-        <picture class="relative group overflow-hidden rounded-lg">
-          <img
-            src="/images/ale.webp"
-            alt="ale"
-            class="group-hover:scale-125 transition-all"
-            width="386px"
-            height="464px"
-          />
-          <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
+      <article class="flex flex-col gap-4">
+        <h1
+          class="font-extrabold text-yellow-500 uppercase text-2xl md:text-6xl"
+        >
+          Los Pichy Boys
+          <p
+            id="ticket"
+            class="font-extrabold text-yellow-500 uppercase text-xl"
           >
-            <strong class="opacity-100 text-white text-3xl"
-              >Alejandro [Pichy]</strong
-            >
-            <p>@LosPichyBoys</p>
-          </div>
-        </picture>
+            #TeamPichyBoys
+          </p>
+        </h1>
 
-        <picture class="relative group overflow-hidden rounded-lg">
-          <img
-            src="/images/maikito.webp"
-            alt="maikito"
-            class="group-hover:scale-125 transition-all"
-            width="386px"
-            height="464px"
-          />
-
-          <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
-          >
-            <strong class="opacity-100 text-white text-3xl"
-              >Maikel [Maikito]</strong
-            >
-            <p>@LosPichyBoys</p>
-          </div>
-        </picture>
-        <picture class="relative group overflow-hidden rounded-lg">
-          <img
-            src="/images/gustavo.webp"
-            alt="gustavo"
-            class="group-hover:scale-125 transition-all"
-            width="386px"
-            height="464px"
-          />
-          <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
-          >
-            <strong class="opacity-100 text-white text-3xl text-nowrap">
-              Gustavo [La Maquina]</strong
-            >
-            <p>Camarógrafo & Editor De Videos</p>
-          </div>
-        </picture>
-        <picture class="relative group overflow-hidden rounded-lg">
-          <img
-            src="/images/lopez.webp"
-            alt="lopez"
-            class="group-hover:scale-125 transition-all"
-            width="386px"
-            height="464px"
-          />
-          <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
-          >
-            <strong class="opacity-100 text-white text-3xl">
-              Alex [Lopez] Lopez</strong
-            >
-            <div>
-              <p>Productor Técnico</p>
-              <p>¿Comediante?</p>
-              <p>@AlexDWaves</p>
-            </div>
-          </div>
-        </picture>
-        <picture class="relative group overflow-hidden rounded-lg">
-          <img
-            src="/images/machete.webp"
-            alt="machete"
-            class="group-hover:scale-125 transition-all"
-            width="386px"
-            height="464px"
-          />
-          <div
-            class="absolute capitalize text-yellow-200 flex flex-col items-start justify-start gap-10 pt-5 pl-5 opacity-95 bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0"
-          >
-            <strong class="opacity-100 text-white text-3xl">
-              Mikey [Machete]</strong
-            >
-            <div>
-              <p>Productor Creativo</p>
-              <p>Digital Marketing Expert</p>
-              <p>@MikeyMachete</p>
-            </div>
-          </div>
-        </picture>
-      </article>
-    </section>
-
-    <section
-      class="w-full flex items-center justify-center flex-col px-2 md:px-20"
-    >
-      <article
-        class="w-full xl:w-1/2 text-white gap-5 flex flex-col justify-center items-center"
-      >
-        <h1 class="font-extrabold text-3xl">Los Pichy Boys & Su Equipo</h1>
-        <blockquote class="italic font-extralight text-lg text-center">
+        <div class="font-extralight text-xl leading-relaxed text-white">
           Los Pichy Boys son el super-dúo humorístico conformado por los Cubanos
-          Alejandro González y Maikel Rodríguez. Los Pichy Boys, que son primos
-          por parte de madre, comenzaron haciendo pequeños videos por el año
-          2007 para Youtube en su casa que poco a poco alcanzaban más visitas.
-          Hoy día se han convertido en celebridades internacionales con su
-          podcast, Somos Los Pichy Boys junto a su banda de secuaces. Únete a la
-          banda usando el hashtag #TeamPichyBoys
-        </blockquote>
-        <p class="text-sm">Alejandro Y Maikel, son Los Pichy Boys</p>
+          <span class="underline decoration-yellow-500">Alejandro González</span
+          >
+          y <span class="underline decoration-yellow-500">Maikel Rodríguez</span
+          >. Los Pichy Boys, que son primos por parte de madre, comenzaron
+          haciendo pequeños videos por el año 2007 para Youtube en su casa que
+          poco a poco alcanzaban más visitas. Hoy día se han convertido en
+          celebridades internacionales con su podcast, Somos Los Pichy Boys
+          junto a su banda de secuaces. Únete a la banda usando el hashtag <span
+            class="text-yellow-500 font-bold decoration-yellow-500 underline"
+            >#TeamPichyBoys</span
+          >
+          <div class="flex w-full justify-end mt-4">
+            <p class="text-right text-yellow-500 text-xl">
+              Alejandro Y Maikel, son Los Pichy Boys
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {
+            losPichyBoys.map((member) => (
+              <picture class="relative group overflow-hidden rounded-lg">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  class="group-hover:scale-125 transition-all w-auto h-full h-min-[360px]"
+                  width="auto"
+                  height="auto"
+                />
+                <div class="absolute capitalize text-yellow-500 flex flex-col items-start justify-start gap-10 pt-5 pl-5 backdrop-blur-sm bg-gradient-to-r from-violet-900 w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0">
+                  <strong class="opacity-100 text-white text-3xl">
+                    {member.name}
+                  </strong>
+                  <p>{member.handle}</p>
+                </div>
+              </picture>
+            ))
+          }
+        </div>
+      </article>
+
+      <article class="flex flex-col gap-4">
+        <h1
+          class="font-extrabold text-yellow-500 uppercase text-2xl md:text-6xl"
+        >
+          Su Equipo
+        </h1>
+
+        <div class="grid grid-cols-3 gap-8">
+          {
+            teamMembers.map((member) => (
+              <picture class="relative group overflow-hidden rounded-lg">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  class="group-hover:scale-125 transition-all"
+                  width="386px"
+                  height="464px"
+                />
+                <div class="absolute capitalize text-yellow-500 flex flex-col items-start justify-start gap-10 pt-5 pl-5 bg-gradient-to-r from-violet-900 backdrop-blur-sm w-full h-full -bottom-full z-10 transition-all group-hover:bottom-0">
+                  <strong class="opacity-100 text-white text-3xl">
+                    {member.name}
+                  </strong>
+                  <ul>
+                    {member.handle.map((h, index) => (
+                      <li data-key={index}>{h}</li>
+                    ))}
+                  </ul>
+                </div>
+              </picture>
+            ))
+          }
+        </div>
       </article>
     </section>
   </main>

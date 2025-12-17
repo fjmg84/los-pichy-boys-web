@@ -1,4 +1,5 @@
 ---
+import Title from "@components/Title.astro";
 import Layout from "@layouts/Layout.astro";
 import { PAGES } from "src/utils/constants";
 
@@ -46,9 +47,7 @@ const teamMembers = [
       class="w-full flex items-center justify-center flex-col gap-8 max-w-4xl"
     >
       <article class="flex flex-col gap-4">
-        <h1
-          class="font-extrabold text-yellow-500 uppercase text-2xl md:text-6xl"
-        >
+        <Title>
           Los Pichy Boys
           <p
             id="ticket"
@@ -56,7 +55,7 @@ const teamMembers = [
           >
             #TeamPichyBoys
           </p>
-        </h1>
+        </Title>
 
         <div class="font-extralight text-xl leading-relaxed text-white">
           Los Pichy Boys son el super-dúo humorístico conformado por los Cubanos

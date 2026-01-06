@@ -1,5 +1,5 @@
 import { PAGES } from "src/utils/constants";
-import { useRef, useState, type ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { IconMenu } from "./Icons";
 
 const links = [
